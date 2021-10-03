@@ -17,12 +17,31 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="emW-aJ-YDU">
+                                <rect key="frame" x="195.5" y="437.5" width="80" height="50"/>
+                                <color key="backgroundColor" red="0.5889429383" green="1" blue="0.65404692269999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="oyD-O7-yMf"/>
+                                    <constraint firstAttribute="width" constant="80" id="ueh-YI-h25"/>
+                                </constraints>
+                                <state key="normal" title="Login"/>
+                                <connections>
+                                    <action selector="loginAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iX8-pu-VQy"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="emW-aJ-YDU" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="14.5" id="Knd-fo-WQS"/>
+                            <constraint firstItem="emW-aJ-YDU" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="28.5" id="iBd-bP-ZC3"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="47.826086956521742" y="51.5625"/>
         </scene>
     </scenes>
 </document>

@@ -7,13 +7,13 @@
 
 import Foundation
 
-class Tracking {
+public class Tracking {
     
     static let shared = Tracking()
     
     private init() { }
     
-    func setupListenNotif() {
+    func setupListenNotification() {
         NotificationCenter.default
             .addObserver(self,
                          selector: #selector(logEvent),

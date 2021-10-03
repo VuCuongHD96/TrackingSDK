@@ -15,6 +15,8 @@
 		A4B78F6C2709EE7200F632D7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4B78F6A2709EE7200F632D7 /* Main.storyboard */; };
 		A4B78F6E2709EE7400F632D7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A4B78F6D2709EE7400F632D7 /* Assets.xcassets */; };
 		A4B78F712709EE7400F632D7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4B78F6F2709EE7400F632D7 /* LaunchScreen.storyboard */; };
+		A4B78F762709F00900F632D7 /* NotificationName+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B78F5D2709EC5900F632D7 /* NotificationName+.swift */; };
+		A4B78F772709F00900F632D7 /* Tracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B78F5C2709EC5900F632D7 /* Tracking.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -221,6 +223,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A4B78F772709F00900F632D7 /* Tracking.swift in Sources */,
+				A4B78F762709F00900F632D7 /* NotificationName+.swift in Sources */,
 				A4B78F692709EE7200F632D7 /* ViewController.swift in Sources */,
 				A4B78F672709EE7200F632D7 /* AppDelegate.swift in Sources */,
 			);
