@@ -19,6 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let className = NSStringFromClass(self.classForCoder)
         let event = Event(className: className, eventName: #function)
         tracking.postData(notificationName: .appDelegate, event: event)
+        tracking.postSystemData()
         return true
     }
 

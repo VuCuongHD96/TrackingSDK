@@ -44,7 +44,12 @@ public class Tracking {
         notificationDefault.post(name: notificationName, object: event)
     }
     
-    private func postSystemData() {
-        
+    func postSystemData() {
+        let systemInfo = SystemInfo()
+        let encoder = JSONEncoder()
+        if let jsonData = try? encoder.encode(systemInfo),
+            let jsonString = String(data: jsonData, encoding: .utf8) {
+            print(jsonString)
+        }
     }
 }
