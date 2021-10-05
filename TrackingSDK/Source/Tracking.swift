@@ -10,25 +10,41 @@ import Foundation
 public class Tracking {
     
     static let shared = Tracking()
+    private let notificationDefault = NotificationCenter.default
     
     private init() { }
     
     func setupListenNotification() {
-        NotificationCenter.default
-            .addObserver(self,
-                         selector: #selector(logEvent),
-                         name: .appDelegate,
-                         object: nil)
+        notificationDefault.addObserver(self,
+                                        selector: #selector(logEventApp),
+                                        name: .appDelegate,
+                                        object: nil)
+        
+        notificationDefault.addObserver(self,
+                                        selector: #selector(logEventScreen),
+                                        name: .screen,
+                                        object: nil)
     }
     
-    @objc private func logEvent(notification: Notification) {
+    @objc private func logEventApp(notification: Notification) {
         print("\n\n------- SDK: debug --------")
-        if let event = notification.object as? String {
+        if let event = notification.object as? EventType {
+            print(event.className)
+        }
+    }
+    
+    @objc private func logEventScreen(notification: Notification) {
+        print("\n\n------- SDK: debug --------")
+        if let event = notification.object as? EventType {
             print(event)
         }
     }
     
-    func postData(funcName: String) {
-        NotificationCenter.default.post(name: .appDelegate, object: funcName)
+    func postData(notificationName: Notification.Name, event: EventType) {
+        notificationDefault.post(name: notificationName, object: event)
+    }
+    
+    private func postSystemData() {
+        
     }
 }

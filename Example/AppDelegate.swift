@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import TrackingSDK
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,28 +16,39 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         tracking.setupListenNotification()
-        tracking.postData(funcName: #function)
+        let className = NSStringFromClass(self.classForCoder)
+        let event = Event(className: className, eventName: #function)
+        tracking.postData(notificationName: .appDelegate, event: event)
         return true
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
-       tracking.postData(funcName: #function)
+        let className = NSStringFromClass(self.classForCoder)
+        let event = Event(className: className, eventName: #function)
+        tracking.postData(notificationName: .appDelegate, event: event)
     }
 
     func applicationDidEnterBackground(_ application: UIApplication) {
-       tracking.postData(funcName: #function)
+        let className = NSStringFromClass(self.classForCoder)
+        let event = Event(className: className, eventName: #function)
+        tracking.postData(notificationName: .appDelegate, event: event)
     }
 
     func applicationWillEnterForeground(_ application: UIApplication) {
-        tracking.postData(funcName: #function)
+        let className = NSStringFromClass(self.classForCoder)
+        let event = Event(className: className, eventName: #function)
+        tracking.postData(notificationName: .appDelegate, event: event)
     }
 
     func applicationDidBecomeActive(_ application: UIApplication) {
-       tracking.postData(funcName: #function)
+        let className = NSStringFromClass(self.classForCoder)
+        let event = Event(className: className, eventName: #function)
+        tracking.postData(notificationName: .appDelegate, event: event)
     }
 
     func applicationWillTerminate(_ application: UIApplication) {
-       tracking.postData(funcName: #function)
+        let className = NSStringFromClass(self.classForCoder)
+        let event = Event(className: className, eventName: #function)
+        tracking.postData(notificationName: .appDelegate, event: event)
     }
 }
-

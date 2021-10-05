@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A487FC0B270BF9C700AB3795 /* SystemInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A487FC0A270BF9C700AB3795 /* SystemInfo.swift */; };
+		A487FC0E270C098D00AB3795 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = A487FC0D270C098D00AB3795 /* Event.swift */; };
+		A487FC0F270C0AA200AB3795 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = A487FC0D270C098D00AB3795 /* Event.swift */; };
 		A4B78F552709EC0200F632D7 /* TrackingSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = A4B78F532709EC0200F632D7 /* TrackingSDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A4B78F5E2709EC5900F632D7 /* Tracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B78F5C2709EC5900F632D7 /* Tracking.swift */; };
 		A4B78F5F2709EC5900F632D7 /* NotificationName+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B78F5D2709EC5900F632D7 /* NotificationName+.swift */; };
@@ -20,6 +23,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A487FC0A270BF9C700AB3795 /* SystemInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemInfo.swift; sourceTree = "<group>"; };
+		A487FC0D270C098D00AB3795 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		A4B78F502709EC0200F632D7 /* TrackingSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TrackingSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4B78F532709EC0200F632D7 /* TrackingSDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TrackingSDK.h; sourceTree = "<group>"; };
 		A4B78F542709EC0200F632D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -52,6 +57,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A4338B4C270C384F00683A43 /* System */ = {
+			isa = PBXGroup;
+			children = (
+				A487FC0A270BF9C700AB3795 /* SystemInfo.swift */,
+			);
+			path = System;
+			sourceTree = "<group>";
+		};
+		A487FC09270BF95000AB3795 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				A4B78F5D2709EC5900F632D7 /* NotificationName+.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		A487FC0C270C097300AB3795 /* Event */ = {
+			isa = PBXGroup;
+			children = (
+				A487FC0D270C098D00AB3795 /* Event.swift */,
+			);
+			path = Event;
+			sourceTree = "<group>";
+		};
 		A4B78F462709EC0200F632D7 = {
 			isa = PBXGroup;
 			children = (
@@ -73,6 +102,9 @@
 		A4B78F522709EC0200F632D7 /* TrackingSDK */ = {
 			isa = PBXGroup;
 			children = (
+				A4338B4C270C384F00683A43 /* System */,
+				A487FC0C270C097300AB3795 /* Event */,
+				A487FC09270BF95000AB3795 /* Extension */,
 				A4B78F5B2709EC0B00F632D7 /* Source */,
 				A4B78F532709EC0200F632D7 /* TrackingSDK.h */,
 				A4B78F542709EC0200F632D7 /* Info.plist */,
@@ -83,7 +115,6 @@
 		A4B78F5B2709EC0B00F632D7 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				A4B78F5D2709EC5900F632D7 /* NotificationName+.swift */,
 				A4B78F5C2709EC5900F632D7 /* Tracking.swift */,
 			);
 			path = Source;
@@ -214,7 +245,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A487FC0E270C098D00AB3795 /* Event.swift in Sources */,
 				A4B78F5E2709EC5900F632D7 /* Tracking.swift in Sources */,
+				A487FC0B270BF9C700AB3795 /* SystemInfo.swift in Sources */,
 				A4B78F5F2709EC5900F632D7 /* NotificationName+.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -227,6 +260,7 @@
 				A4B78F762709F00900F632D7 /* NotificationName+.swift in Sources */,
 				A4B78F692709EE7200F632D7 /* ViewController.swift in Sources */,
 				A4B78F672709EE7200F632D7 /* AppDelegate.swift in Sources */,
+				A487FC0F270C0AA200AB3795 /* Event.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
