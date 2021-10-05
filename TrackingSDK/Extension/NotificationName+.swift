@@ -9,4 +9,5 @@ import Foundation
 
 extension Notification.Name {
     static let appDelegate = Notification.Name("appDelegate")
+    static let screen = Notification.Name("screen")
 }
