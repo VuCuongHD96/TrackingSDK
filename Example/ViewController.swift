@@ -55,27 +55,13 @@ final class ViewController: UIViewController {
     
     // MARK: - View
     private func setupView() {
-        scrollView.delegate = self
+        tracking.trackScrollView(scrollView)
     }
     
     // MARK: - Action
     @IBAction func loginAction(_ sender: Any) {
         let className = NSStringFromClass(self.classForCoder)
         let event = Event(className: className, eventName: #function)
-        tracking.postData(notificationName: .screen, event: event)
-    }
-}
-
-extension ViewController: UIScrollViewDelegate {
-    
-    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-        let y = scrollView.contentOffset.y
-        let contentHeight = scrollView.contentSize.height
-        let scrollPercent = y / contentHeight * 100
-        let className = NSStringFromClass(self.classForCoder)
-        let event = Event(className: className,
-                          eventName: "Scroll",
-                          properties: ["Scroll Percent" : scrollPercent])
         tracking.postData(notificationName: .screen, event: event)
     }
 }
