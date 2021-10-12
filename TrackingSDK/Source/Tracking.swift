@@ -5,14 +5,14 @@
 //  Copyright © 2021 Sun. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
-public class Tracking {
+public class Tracking: NSObject {
     
     static let shared = Tracking()
     private let notificationDefault = NotificationCenter.default
     
-    private init() { }
+    private override init() { }
     
     func setupListenNotification() {
         notificationDefault.addObserver(self,
@@ -51,5 +51,24 @@ public class Tracking {
             let jsonString = String(data: jsonData, encoding: .utf8) {
             print(jsonString)
         }
+    }
+    
+    func trackScrollView(_ scrollView: UIScrollView) {
+        scrollView.delegate = self
+        scrollViewDidEndDecelerating(scrollView)
+    }
+}
+
+extension Tracking: UIScrollViewDelegate {
+    
+    public func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        let y = scrollView.contentOffset.y
+        let contentHeight = scrollView.contentSize.height
+        let scrollPercent = y / contentHeight * 100
+        let className = NSStringFromClass(self.classForCoder)
+        let event = Event(className: className,
+                          eventName: "Scroll",
+                          properties: ["Scroll Percent" : scrollPercent])
+        postData(notificationName: .screen, event: event)
     }
 }
